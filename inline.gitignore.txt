@@ -1,0 +1,2 @@
+configin.py
+__pycache__/
