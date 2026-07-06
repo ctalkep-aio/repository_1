@@ -26,7 +26,7 @@ async def pages(message: types.Message):
             ]
         ]
     )
-    await message.answer(text1, reply_markup=keyboard)
+    await message.answer(text1, reply_markup=None)
 
 @dp.callback_query()
 async def change_page(callback: types.CallbackQuery):
