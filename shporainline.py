@@ -44,6 +44,17 @@ async def change_page(callback: types.CallbackQuery):
         await callback.message.edit_text(text2, reply_markup=keyboard)
     else:
         await callback.message.edit_text("Страницы кончились", reply_markup=keyboard)
+         keyboard = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="Вперед", callback_data=f"next_{new_page}"),
+                InlineKeyboardButton(text="Назад", callback_data=f"prev_{new_page}")
+            ]
+        ]
+    )
+
+    await callback.message.edit_text(new_text, reply_markup=keyboard)
+    await callback.answer(f"Страница {new_page}")
 async def main():
     await dp.start_polling(bot)
 if __name__ == "__main__":
