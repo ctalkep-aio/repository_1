@@ -3,7 +3,8 @@ from aiogram.filters import Command
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import asyncio
 from aiogram.utils import keyboard
-from configin import TOKEN
+import os
+TOKEN = os.getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
 text1 = "1-ая страница"
